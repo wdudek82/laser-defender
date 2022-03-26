@@ -10,8 +10,20 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 10;
 
-    private Vector2 _rawInput;
+    [Header("Padding")]
+    [SerializeField]
+    private float paddingLeft;
 
+    [SerializeField]
+    private float paddingRight;
+
+    [SerializeField]
+    private float paddingTop;
+
+    [SerializeField]
+    private float paddingBottom;
+
+    private Vector2 _rawInput;
     private Vector2 _minBounds;
     private Vector2 _maxBounds;
 
@@ -32,6 +44,7 @@ public class Player : MonoBehaviour
         {
             throw new Exception("Camera not found!");
         }
+
         _minBounds = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
         _maxBounds = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
     }
@@ -39,7 +52,6 @@ public class Player : MonoBehaviour
     void OnMove(InputValue value)
     {
         _rawInput = value.Get<Vector2>();
-        Debug.Log(_rawInput);
     }
 
     void Move()
@@ -47,8 +59,8 @@ public class Player : MonoBehaviour
         var delta = _rawInput * moveSpeed * Time.deltaTime;
         var newPos = new Vector2();
         var position = transform.position;
-        newPos.x = Mathf.Clamp(position.x + delta.x, _minBounds.x, _maxBounds.x);
-        newPos.y = Mathf.Clamp(position.y + delta.y, _minBounds.y, _maxBounds.y);
+        newPos.x = Mathf.Clamp(position.x + delta.x, _minBounds.x + paddingLeft, _maxBounds.x - paddingRight);
+        newPos.y = Mathf.Clamp(position.y + delta.y, _minBounds.y + paddingBottom, _maxBounds.y - paddingTop);
         transform.position = newPos;
     }
 }
