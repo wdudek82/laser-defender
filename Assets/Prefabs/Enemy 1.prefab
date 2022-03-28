@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 769153167496173799}
   - component: {fileID: 769153167496173792}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemyBlack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 1176081682814298070}
   - component: {fileID: 7013651088034549483}
   - component: {fileID: -8839404022527923356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

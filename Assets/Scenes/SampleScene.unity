@@ -349,6 +349,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 44280754974856019, guid: 9dadfa0f3942d8b4da9c77d31f4fa2f6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822085103261715848, guid: 9dadfa0f3942d8b4da9c77d31f4fa2f6, type: 3}
+      propertyPath: fireRate
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822085103261715848, guid: 9dadfa0f3942d8b4da9c77d31f4fa2f6, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 2011068841659370502, guid: b3fb96306f1494841a26576e71af715d, type: 3}
     - target: {fileID: 3808187613134122531, guid: 9dadfa0f3942d8b4da9c77d31f4fa2f6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -396,6 +408,10 @@ PrefabInstance:
     - target: {fileID: 6532622695171778708, guid: 9dadfa0f3942d8b4da9c77d31f4fa2f6, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532622695171778708, guid: 9dadfa0f3942d8b4da9c77d31f4fa2f6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dadfa0f3942d8b4da9c77d31f4fa2f6, type: 3}
