@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Shooter : MonoBehaviour
 {
@@ -31,6 +33,12 @@ public class Shooter : MonoBehaviour
     public bool isFiring;
 
     private Coroutine _firingCoroutine;
+    private AudioPlayer _audioPlayer;
+
+    private void Awake()
+    {
+        _audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
 
     void Start()
     {
@@ -70,6 +78,7 @@ public class Shooter : MonoBehaviour
             }
 
             Destroy(instance, projectileLifetime);
+            _audioPlayer.PlayShootingClip();
             yield return new WaitForSecondsRealtime(TimeToNextProjectile());
         }
     }

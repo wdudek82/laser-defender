@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5889760797583919583}
   - component: {fileID: 1332329310575155301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: playerShip2_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,12 +94,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3808187613134122531}
   - component: {fileID: -6627966223409282016}
-  - component: {fileID: 893663960}
   - component: {fileID: 1381972220961775345}
   - component: {fileID: 7635172934753835085}
+  - component: {fileID: 893663960}
   - component: {fileID: 5420033690692816935}
   - component: {fileID: 2822085103261715848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,23 +152,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &893663960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532622695171778708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d5c6ff0ffba2f34bbeeb96db325e717, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  paddingLeft: 0.5
-  paddingRight: 0.5
-  paddingTop: 5
-  paddingBottom: 2
 --- !u!50 &1381972220961775345
 Rigidbody2D:
   serializedVersion: 4
@@ -206,6 +189,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
   m_Radius: 0.45
+--- !u!114 &893663960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532622695171778708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5c6ff0ffba2f34bbeeb96db325e717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  paddingLeft: 0.5
+  paddingRight: 0.5
+  paddingTop: 5
+  paddingBottom: 2
 --- !u!114 &5420033690692816935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   hitEffect: {fileID: 5372764399398490223, guid: 560dd90e415bde5409826d2382fb0503, type: 3}
+  applyCameraShake: 0
 --- !u!114 &2822085103261715848
 MonoBehaviour:
   m_ObjectHideFlags: 0
