@@ -67,6 +67,11 @@ public class Health : MonoBehaviour
             _scoreKeeper.UpdateScoreWithValue(score);
         }
         Destroy(gameObject);
+
+        if (isPlayer)
+        {
+            FindObjectOfType<LevelManager>().LoadGameOver();
+        }
     }
 
     private void ShakeCamera()
