@@ -71,6 +71,7 @@ public class Health : MonoBehaviour
         if (isPlayer)
         {
             FindObjectOfType<LevelManager>().LoadGameOver();
+            // StartCoroutine(GameOver());
         }
     }
 

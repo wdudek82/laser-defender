@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,12 @@ public class LevelManager : MonoBehaviour
 
     public void LoadGameOver()
     {
+        StartCoroutine(GameOver());
+    }
+
+    private static IEnumerator GameOver()
+    {
+        yield return new WaitForSecondsRealtime(3);
         SceneManager.LoadScene("GameOver");
     }
 
