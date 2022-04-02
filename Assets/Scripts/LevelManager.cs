@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,8 +8,16 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private float sceneLoadDelay = 2f;
 
+    private ScoreKeeper _scoreKeeper;
+
+    private void Awake()
+    {
+        _scoreKeeper = FindObjectOfType<ScoreKeeper>();
+    }
+
     public void LoadGame()
     {
+        _scoreKeeper.ResetScore();
         SceneManager.LoadScene("Game");
     }
 
