@@ -1,3 +1,4 @@
+using UnityEditorInternal;
 using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
@@ -17,6 +18,36 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField]
     [Range(0f, 1f)]
     private float damageVolume = 1f;
+
+    private static AudioPlayer _instance;
+
+    // public AudioPlayer GetInstance()
+    // {
+    //     return _instance;
+    // }
+
+    private void Awake()
+    {
+        ManageSingleton();
+    }
+
+    private void ManageSingleton()
+    {
+        // Alternative way of creating singleton
+        // var instanceCount = FindObjectsOfType(GetType()).Length;
+        // if (instanceCount > 1)
+        if (_instance != null)
+        {
+            GameObject o;
+            (o = gameObject).SetActive(false);
+            Destroy(o);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     public void PlayShootingClip()
     {

@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField]
+    private float sceneLoadDelay = 2f;
+
     public void LoadGame()
     {
         SceneManager.LoadScene("Game");
@@ -16,13 +19,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadGameOver()
     {
-        StartCoroutine(GameOver());
-    }
+        StartCoroutine(WaitAndLoad("GameOver", sceneLoadDelay));
 
-    private static IEnumerator GameOver()
-    {
-        yield return new WaitForSecondsRealtime(3);
-        SceneManager.LoadScene("GameOver");
     }
 
     public void QuitGame()
@@ -31,5 +29,11 @@ public class LevelManager : MonoBehaviour
 
         // Won't work for WebGL.
         Application.Quit();
+    }
+
+    private IEnumerator WaitAndLoad(string sceneName, float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        SceneManager.LoadScene(sceneName);
     }
 }
